@@ -1,0 +1,26 @@
+﻿@model IdentityProject.ViewModels.ContaLoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+
+@using (Html.BeginForm())
+{
+    <h4> Preencha usuário e senha</h4>
+    <hr />
+
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    @Html.EditorForModel()
+
+    @Html.ActionLink("Esqueci minha senha", "EsqueciSenha")
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Login" class="btn btn-default" />
+        </div>
+    </div>
+}
